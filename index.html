@@ -9,7 +9,6 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.css">
-    
         <style>
             body,html {
                 height: 100%;
@@ -25,17 +24,19 @@
                             <div class="col-md-12 d-flex flex-column flex-fill">
                                 <div id="draw-area" class="div-table flex-fill p-3">
                                     <table id="table"
+                                        data-search-accent-neutralise="true"
                                         data-locale="pt-PT"
                                         data-toggle="table"
                                         data-search="true"
                                         data-show-search-clear-button="true"
                                         data-detail-view="true"
+                                        data-detail-view-by-click="true"
                                         data-detail-formatter="detailFormatter"
                                         data-remember-order="true"
                                         data-cookie="true"
                                         data-cookie-id-table="saveId"
-                                        data-mobile-responsive="true"
                                         data-height="600"
+                                        data-pagination="true"
                                         data-url="https://mtsiwapi.duckdns.org/api/contracts"
                                         >
                                         <thead>
@@ -44,14 +45,14 @@
                                                 <th data-field="schoolCode" data-visible="false">Código Agrupamento</th>
                                                 <th data-field="schoolName" data-sortable="true">Escola</th>
                                                 <th data-field="contractNumber" data-visible="false">Nº horário</th>
-                                                <th data-field="nHoursPerWeek" data-sortable="true">Horas</th>
-                                                <th data-field="contractEndDate" data-sortable="true">Final Colocação</th>
-                                                <th data-field="applicationDeadline" data-sortable="true">Final de Candidatura</th>
-                                                <th data-field="recruitmentGroup" data-sortable="true">G.R.</th>
+                                                <th data-field="nHoursPerWeek" data-sortable="true" data-align="right">Horas</th>
+                                                <th data-field="contractEndDate" data-sortable="true" data-align="right">Final Colocação</th>
+                                                <th data-field="applicationDeadline" data-sortable="true" data-align="right">Final de Candidatura</th>
+                                                <th data-field="recruitmentGroup" data-sortable="true" data-align="right">G.R.</th>
                                                 <th data-field="county" data-visible="false">Concelho</th>
                                                 <th data-field="district" data-visible="false">Distrito</th>
                                                 <th data-field="classProject" data-visible="true" data-sortable="true">Disciplina / Projeto</th>
-                                                <th data-field="qualifications" data-visible="true">Curso/Habilitação</th>
+                                                <th data-field="qualifications" data-visible="false">Curso/Habilitação</th>
                                             </tr>
                                         </thead>
                                     </table>
@@ -72,11 +73,11 @@
     <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/accent-neutralise/bootstrap-table-accent-neutralise.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/addrbar/bootstrap-table-addrbar.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/cookie/bootstrap-table-cookie.min.js"></script>
-    <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/mobile/bootstrap-table-mobile.min.js"></script>
 
     <script>
         var called = 0;
 
+        // Update on load to fill all the available height
         $('#table').on('load-success.bs.table', function() {
             var $div = $('.div-table');
             var $table = $('#table');
@@ -90,6 +91,10 @@
             $table.bootstrapTable('refreshOptions', {
                 height: $div.height()
             });
+        });
+
+        $(window).resize(function () {
+            $('#tableId').bootstrapTable('resetView');
         });
 
         function detailFormatter(index, row) {
