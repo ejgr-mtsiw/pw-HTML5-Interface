@@ -1,62 +1,124 @@
 <!doctype html>
 <html lang="pt">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Ofertas de Escola</title>
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Hello, Bootstrap Table!</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.css">
+    
+        <style>
+            body,html {
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="d-md-flex flex-column h-100">
+            <div class="container-fluid d-flex h-100">
+                <div class="row flex-fill">
+                    <div class="col-md-12">
+                        <div class="row h-100">
+                            <div class="col-md-12 d-flex flex-column flex-fill">
+                                <div id="draw-area" class="div-table flex-fill p-3">
+                                    <table id="table"
+                                        data-locale="pt-PT"
+                                        data-toggle="table"
+                                        data-search="true"
+                                        data-show-search-clear-button="true"
+                                        data-detail-view="true"
+                                        data-detail-formatter="detailFormatter"
+                                        data-remember-order="true"
+                                        data-cookie="true"
+                                        data-cookie-id-table="saveId"
+                                        data-mobile-responsive="true"
+                                        data-height="600"
+                                        data-url="https://mtsiwapi.duckdns.org/api/contracts"
+                                        >
+                                        <thead>
+                                            <tr>
+                                                <th data-field="id" data-visible="false" data-card-visible="false">ID</th>
+                                                <th data-field="schoolCode" data-visible="false">Código Agrupamento</th>
+                                                <th data-field="schoolName" data-sortable="true">Escola</th>
+                                                <th data-field="contractNumber" data-visible="false">Nº horário</th>
+                                                <th data-field="nHoursPerWeek" data-sortable="true">Horas</th>
+                                                <th data-field="contractEndDate" data-sortable="true">Final Colocação</th>
+                                                <th data-field="applicationDeadline" data-sortable="true">Final de Candidatura</th>
+                                                <th data-field="recruitmentGroup" data-sortable="true">G.R.</th>
+                                                <th data-field="county" data-visible="false">Concelho</th>
+                                                <th data-field="district" data-visible="false">Distrito</th>
+                                                <th data-field="classProject" data-visible="true" data-sortable="true">Disciplina / Projeto</th>
+                                                <th data-field="qualifications" data-visible="true">Curso/Habilitação</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.css">
-</head>
-
-<body>
-    <table id="table" data-locale="pt-PT" data-toggle="table" data-search="true" data-show-search-clear-button="true"
-        data-detail-view="true" data-detail-formatter="detailFormatter" data-remember-order="true"
-        data-url="https://mtsiwapi.duckdns.org/api/contracts">
-        <thead>
-            <tr>
-                <th data-field="id" data-visible="false">ID</th>
-                <th data-field="schoolCode" data-visible="false">Código Agrupamento</th>
-                <th data-field="schoolName" data-sortable="true">Escola</th>
-                <th data-field="contractNumber" data-visible="false">Nº horário</th>
-                <th data-field="nHoursPerWeek" data-sortable="true">Horas</th>
-                <th data-field="contractEndDate" data-sortable="true">Data Final Colocação</th>
-                <th data-field="applicationDeadline" data-sortable="true">Data Final de Candidatura</th>
-                <th data-field="recruitmentGroup" data-sortable="true">Grupo de Recrutamento</th>
-                <th data-field="county" data-visible="false">Concelho</th>
-                <th data-field="district" data-visible="false">Distrito</th>
-                <th data-field="classProject" data-visible="false">Disciplina / Projeto</th>
-                <th data-field="qualifications" data-visible="false">Curso/Habilitação</th>
-            </tr>
-        </thead>
-    </table>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table-locale-all.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/accent-neutralise/bootstrap-table-accent-neutralise.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/addrbar/bootstrap-table-addrbar.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/cookie/bootstrap-table-cookie.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/mobile/bootstrap-table-mobile.min.js"></script>
 
     <script>
+        var called = 0;
+
+        $('#table').on('load-success.bs.table', function() {
+            var $div = $('.div-table');
+            var $table = $('#table');
+
+            if (called != 0) {
+                return;
+            }
+
+            called = 1;
+
+            $table.bootstrapTable('refreshOptions', {
+                height: $div.height()
+            });
+        });
+
         function detailFormatter(index, row) {
             var html = [];
 
-            $.each(row, function (key, value) {
-                html.push('<p><b>' + key + ':</b> ' + value + '</p>');
-            })
+            html.push('<p>' + row.schoolName + ' - ' + row.schoolCode + '</p>');
+            html.push('<p><b>Horário nº:</b> ' + row.contractNumber + ' ');
+            html.push('<b>Horas:</b> ' + row.nHoursPerWeek + 'h</p>');
+            html.push('<p><b>Data Final de Colocação:</b> ' + row.contractEndDate);
+            if (row.contractEndDate != '2020-08-31') {
+                html.push(' (Temporário)</p>');
+            } else {
+                html.push(' (Anual)</p>');
+            }
+            html.push('<p><b>Data Final de Candidatura:</b> ' + row.applicationDeadline + '</p>');
+            if (row.recruitmentGroup == "T. E.") {
+                html.push('<p><b>Grupo de Recrutamento:</b> Técnico Especializado</p>');
+            } else {
+                html.push('<p><b>Grupo de Recrutamento:</b> ' + row.recruitmentGroup + '</p>');
+            }
+            html.push('<p><b>Concelho:</b> ' + row.county + ' ');
+            html.push('<b>Distrito:</b> ' + row.district + '</p>');
+            html.push('<p><b>Disciplina / Projeto:</b> ' + row.classProject + '</p>');
+            if (row.qualifications.length > 0) {
+                html.push('<p><b>Curso / Habilitação :</b> ' + row.qualifications + '</p>');
+            }
+
             return html.join('');
         }
     </script>
-</body>
-
+    </body>
 </html>
