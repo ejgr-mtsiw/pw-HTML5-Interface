@@ -2,6 +2,14 @@ body, html {
     height: 100%;
 }
 
+body {
+    background-color: #ccc;
+}
+
+.main-container {
+    background-color: #fff;
+}
+
 .bootstrap-table .fixed-table-container .table tbody tr .card-view .card-view-title {
     width: 40%;
 }
@@ -12,4 +20,22 @@ body, html {
 
 .detail-view td {
     padding-left: 50px;
+}
+
+.title {
+    background: #3f9dcc;
+    color: #fff;
+    padding: 20px;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+h5 {
+    margin: 1em 0 0 0;
+    padding: 4px;
+    text-align: center;
+}
+
+p.credits {
+    text-align: center;
 }

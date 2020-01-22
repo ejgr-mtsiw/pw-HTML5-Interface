@@ -8,12 +8,10 @@
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/css/bootstrap-select.min.css" integrity="sha256-l3FykDBm9+58ZcJJtzcFvWjBZNJO40HmvebhpHXEhC0=" crossorigin="anonymous" />
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="/html5/css/style.css">
     </head>
     <body>
-        <div class="d-md-flex flex-column h-100">
+        <div class="container main-container h-100">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">Contratação de Escola</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,11 +19,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/html5/index.html">Início</a>
-                        </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="/html5/horarios.html">Horários<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/html5/index.html">Início<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/html5/horarios.html">Horários</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -43,138 +41,54 @@
                     </ul>
                 </div>
             </nav>
-            <div class="container-fluid d-flex h-100">
-                <div class="row flex-fill">
+            <div class="container">
+                <div class="row">
                     <div class="col-md-12">
-                        <div class="row h-100">
-                            <div class="col-md-12 d-flex flex-column flex-fill">
-                                <div id="draw-area" class="div-table flex-fill">
-                                    <div class="toolbar">
-                                        <select class="selectpicker" id="table-filter" name="table-filter" multiple title="Filtrar...">
-                                            <option value="T. E." title="T. E.">T. E. - Técnicos Especializados</option>
-                                            <option value="100" title="100">100 - Educação Pré-Escolar</option>
-                                            <option value="110" title="110">110 - 1º Ciclo do Ensino Básico</option>
-                                            <option value="120" title="120">120 - Inglês do 1.º Ciclo do Ensino Básico</option>
-                                            <option value="200" title="200">200 - Português e Estudos Sociais/História</option>
-                                            <option value="210" title="210">210 - Português e Francês</option>
-                                            <option value="220" title="220">220 - Português e Inglês</option>
-                                            <option value="230" title="230">230 - Matemática e Ciências da Natureza</option>
-                                            <option value="240" title="240">240 - Educação Visual e Tecnológica</option>
-                                            <option value="250" title="250">250 - Educação Musical</option>
-                                            <option value="260" title="260">260 - Educação Física</option>
-                                            <option value="290" title="290">290 - Educação Moral e Religiosa Católica</option>
-                                            <option value="300" title="300">300 - Português</option>
-                                            <option value="310" title="310">310 - Latim e Grego</option>
-                                            <option value="320" title="320">320 - Francês</option>
-                                            <option value="330" title="330">330 - Inglês</option>
-                                            <option value="340" title="340">340 - Alemão</option>
-                                            <option value="350" title="350">350 - Espanhol</option>
-                                            <option value="400" title="400">400 - História</option>
-                                            <option value="410" title="410">410 - Filosofia</option>
-                                            <option value="420" title="420">420 - Geografia</option>
-                                            <option value="430" title="430">430 - Economia e Contabilidade</option>
-                                            <option value="500" title="500">500 - Matemática</option>
-                                            <option value="510" title="510">510 - Física e Química</option>
-                                            <option value="520" title="520">520 - Biologia e Geologia</option>
-                                            <option value="530" title="530">530 - Educação Tecnológica</option>
-                                            <option value="540" title="540">540 - Electrotecnia</option>
-                                            <option value="550" title="550">550 - Informática</option>
-                                            <option value="560" title="560">560 - Ciências Agropecuárias</option>
-                                            <option value="600" title="600">600 - Artes Visuais</option>
-                                            <option value="610" title="610">610 - Música</option>
-                                            <option value="620" title="620">620 - Educação Física</option>
-                                            <option value="910" title="910">910 - Educação Especial 1</option>
-                                            <option value="920" title="920">920 - Educação Especial 2</option>
-                                            <option value="930" title="930">930 - Educação Especial 3</option>
-                                            <option value="D01" title="D01">D01 - Dança Clássica</option>
-                                            <option value="D02" title="D02">D02 - dança Moderna</option>
-                                            <option value="D03" title="D03">D03 - Dança Contemporânea</option>
-                                            <option value="D04" title="D04">D04 - Criação Coreográfica</option>
-                                            <option value="D05" title="D05">D05 - Danças Tradicionais</option>
-                                            <option value="D06" title="D06">D06 - Música</option>
-                                            <option value="D07" title="D07">D07 - Expressões</option>
-                                            <option value="D08" title="D08">D08 - Produção</option>
-                                            <option value="D09" title="D09">D09 - História das Artes</option>
-                                            <option value="M01" title="M01">M01 - Acordeão</option>
-                                            <option value="M02" title="M02">M02 - Alaúde</option>
-                                            <option value="M03" title="M03">M03 - Bandolim</option>
-                                            <option value="M04" title="M04">M04 - Clarinete</option>
-                                            <option value="M05" title="M05">M05 - Clavicórdio</option>
-                                            <option value="M06" title="M06">M06 - Contrabaixo</option>
-                                            <option value="M07" title="M07">M07 - Cravo</option>
-                                            <option value="M08" title="M08">M08 - Fagote</option>
-                                            <option value="M09" title="M09">M09 - Flauta Transversal</option>
-                                            <option value="M10" title="M10">M10 - Flauta de Bisel</option>
-                                            <option value="M11" title="M11">M11 - Guitarra</option>
-                                            <option value="M12" title="M12">M12 - Guitarra Portuguesa</option>
-                                            <option value="M13" title="M13">M13 - Harpa</option>
-                                            <option value="M14" title="M14">M14 - Oboé</option>
-                                            <option value="M15" title="M15">M15 - Órgão</option>
-                                            <option value="M16" title="M16">M16 - Percurssão</option>
-                                            <option value="M17" title="M17">M17 - Piano</option>
-                                            <option value="M18" title="M18">M18 - Saxofone</option>
-                                            <option value="M19" title="M19">M19 - Trombone</option>
-                                            <option value="M20" title="M20">M20 - Trompa</option>
-                                            <option value="M21" title="M21">M21 - Trompete</option>
-                                            <option value="M22" title="M22">M22 - Tuba</option>
-                                            <option value="M23" title="M23">M23 - Violeta</option>
-                                            <option value="M24" title="M24">M24 - Violino</option>
-                                            <option value="M25" title="M25">M25 - Violoncelo</option>
-                                            <option value="M26" title="M26">M26 - Canto</option>
-                                            <option value="M27" title="M27">M27 - Canto Gregoriano</option>
-                                            <option value="M28" title="M28">M28 - Formação Musical</option>
-                                            <option value="M29" title="M29">M29 - Análise e Técnicas de Composição</option>
-                                            <option value="M30" title="M30">M30 - História da Música</option>
-                                            <option value="M31" title="M31">M31 - Acústica</option>
-                                            <option value="M32" title="M32">M32 - Música de Conjunto</option>
-                                            <option value="M33" title="M33">M33 - Alemão</option>
-                                            <option value="M34" title="M34">M34 - Italiano</option>
-                                            <option value="M35" title="M35">M35 - latim</option>
-                                            <option value="M36" title="M36">M36 - Francês</option>
-                                        </select>
-                                    </div>
-                                    <table id="table"
-                                        data-search-accent-neutralise="true"
-                                        data-locale="pt-PT"
-                                        data-toggle="table"
-                                        data-search="true"
-                                        data-show-columns="true"
-                                        data-show-search-clear-button="true"
-                                        data-detail-view="true"
-                                        data-detail-view-by-click="true"
-                                        data-detail-formatter="detailFormatter"
-                                        data-remember-order="true"
-                                        data-mobile-responsive="true"
-                                        data-cookie="true"
-                                        data-cookie-id-table="saveId"
-                                        data-height="600"
-                                        data-pagination="true"
-                                        data-toolbar=".toolbar"
-                                        data-toolbar-align="left"
-                                        data-sort-name="id"
-                                        data-sort-order="desc"
-                                        data-url="https://mtsiwapi.duckdns.org/api/contracts"
-                                        >
-                                        <thead>
-                                            <tr>
-                                                <th data-field="id" data-visible="false" data-card-visible="false">ID</th>
-                                                <th data-field="schoolCode" data-visible="false">Código Agrupamento</th>
-                                                <th data-field="schoolName" data-sortable="true">Escola</th>
-                                                <th data-field="contractNumber" data-visible="false">Nº horário</th>
-                                                <th data-field="nHoursPerWeek" data-sortable="true" data-align="right">Horas</th>
-                                                <th data-field="contractEndDate" data-sortable="true" data-align="right">Final Colocação</th>
-                                                <th data-field="applicationDeadline" data-sortable="true" data-align="right">Final de Candidatura</th>
-                                                <th data-field="recruitmentGroup" data-sortable="true" data-align="right">Grupo</th>
-                                                <th data-field="county" data-visible="false">Concelho</th>
-                                                <th data-field="district" data-visible="false">Distrito</th>
-                                                <th data-field="classProject" data-visible="true" data-sortable="true">Disciplina / Projeto</th>
-                                                <th data-field="qualifications" data-visible="false">Curso / Habilitação</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+                        <h1 class="title">Aplicação para apoio à candidatura de Técnicos Especializados</h1>
+                        <p>
+                            Este projeto tem como objetivo simplificar a descoberta dos
+                            horários mais relevantes para cada técnico especializado,
+                            simplificando o processo de candidatura aos horários
+                            disponibilizados em Contratação de Escola.
+                        </p>
+                        <p>
+                            A contratação de escola é constituída por horários
+                            que correspondem a “necessidades temporárias de
+                            serviço docente e de formação em áreas técnicas
+                            específicas” que “podem ser asseguradas pelos
+                            agrupamentos de escolas ou escolas não agrupadas,
+                            mediante contratos de trabalho a termo resolutivo a
+                            celebrar com pessoal docente ou pessoal técnico
+                            especializado”. (ponto 1, do art.º 38.º, do
+                            Decreto-Lei n.º 28/2017, de 15 de março)
+                        </p>
+                        <p>
+                            Para os professores profissionalizados a candidatura
+                            é simples: a aplicação que o ministério disponibiliza
+                            permite filtrar pelo grupo de recrutamento e
+                            selecionar os horários a que se pretende concorrer.
+                        </p>
+                        <img class="img-fluid p-3" src="/html5/img/lista_dgrhe.png" alt="Lista dos horários em contratação de escolas na plataforma SIGRHE" />
+                        <p>
+                            No caso dos Técnicos Especializados a aplicação não
+                            é tão eficiente: como estes profissionais não
+                            possuem um grupo de recrutamento, as ofertas
+                            disponíveis aparecem a todos, independentemente da
+                            área de especialização. Um técnico de Mecatrónica
+                            vê na sua lista de horários os horários para
+                            Restauração, Estética, etc... E é preciso expandir
+                            os horários um a um para ter acesso à disciplina/projeto.
+                        </p>
+                        <p>
+                            O objetivo deste projeto é disponibilizar estes dados
+                            utilizando um interface mais simples e intuitivo que
+                            permita localizar a informação que nos é relevantes
+                            de forma mais prática e acessível.
+                        </p>
+                        <p>
+                            O resultado está disponível
+                            <a href="/html5/horarios.html" title="Lista de horários para contratação de escola">aqui</a>.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -182,16 +96,5 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-        <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.js"></script>
-        <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table-locale-all.min.js"></script>
-        <!-- <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/accent-neutralise/bootstrap-table-accent-neutralise.min.js"></script> -->
-        <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/addrbar/bootstrap-table-addrbar.min.js"></script>
-        <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/mobile/bootstrap-table-mobile.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
-        <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/cookie/bootstrap-table-cookie.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/js/bootstrap-select.min.js" integrity="sha256-+o/X+QCcfTkES5MroTdNL5zrLNGb3i4dYdWPWuq6whY=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/js/i18n/defaults-pt_PT.min.js" integrity="sha256-d7ubmtbQ8aUlkZ6pX9oRFvHuYd2A5McecrZd7NCrenQ=" crossorigin="anonymous"></script>
-        <script src="js/home.js"></script>
     </body>
 </html>
