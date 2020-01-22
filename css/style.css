@@ -1,0 +1,15 @@
+body, html {
+    height: 100%;
+}
+
+.bootstrap-table .fixed-table-container .table tbody tr .card-view .card-view-title {
+    width: 40%;
+}
+
+.bootstrap-table .fixed-table-container .table tbody tr .card-view .card-view-value {
+    width: 60%;
+}
+
+.detail-view td {
+    padding-left: 50px;
+}

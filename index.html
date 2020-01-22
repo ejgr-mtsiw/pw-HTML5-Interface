@@ -10,11 +10,7 @@
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/css/bootstrap-select.min.css" integrity="sha256-l3FykDBm9+58ZcJJtzcFvWjBZNJO40HmvebhpHXEhC0=" crossorigin="anonymous" />
-        <style>
-            body,html {
-                height: 100%;
-            }
-        </style>
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <div class="d-md-flex flex-column h-100">
@@ -25,25 +21,26 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Início</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Horários<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Github
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="https://github.com/ejgr-mtsiw/pw-rest-api">pw-rest-api</a>
-                        <a class="dropdown-item" href="https://github.com/ejgr-mtsiw/pw-html-parser">pw-html-parser</a>
-                        <a class="dropdown-item" href="https://github.com/ejgr-mtsiw/pw-HTML5-Interface">pw-HTML5-Interface</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Acerca</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/html5/index.html">Início</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/html5/horarios.html">Horários<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Github
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://github.com/ejgr-mtsiw/pw-rest-api">pw-rest-api</a>
+                            <a class="dropdown-item" href="https://github.com/ejgr-mtsiw/pw-html-parser">pw-html-parser</a>
+                            <a class="dropdown-item" href="https://github.com/ejgr-mtsiw/pw-HTML5-Interface">pw-HTML5-Interface</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/html5/acerca.html">Acerca</a>
+                        </li>
+                    </ul>
                 </div>
             </nav>
             <div class="container-fluid d-flex h-100">
@@ -51,9 +48,9 @@
                     <div class="col-md-12">
                         <div class="row h-100">
                             <div class="col-md-12 d-flex flex-column flex-fill">
-                                <div id="draw-area" class="div-table flex-fill p-3">
+                                <div id="draw-area" class="div-table flex-fill">
                                     <div class="toolbar">
-                                        <select class="selectpicker" id="table-filter" name="table-filter" multiple data-max-options="3" title="Filtrar...">
+                                        <select class="selectpicker" id="table-filter" name="table-filter" multiple title="Filtrar...">
                                             <option value="T. E." title="T. E.">T. E. - Técnicos Especializados</option>
                                             <option value="100" title="100">100 - Educação Pré-Escolar</option>
                                             <option value="110" title="110">110 - 1º Ciclo do Ensino Básico</option>
@@ -141,11 +138,13 @@
                                         data-locale="pt-PT"
                                         data-toggle="table"
                                         data-search="true"
+                                        data-show-columns="true"
                                         data-show-search-clear-button="true"
                                         data-detail-view="true"
                                         data-detail-view-by-click="true"
                                         data-detail-formatter="detailFormatter"
                                         data-remember-order="true"
+                                        data-mobile-responsive="true"
                                         data-cookie="true"
                                         data-cookie-id-table="saveId"
                                         data-height="600"
@@ -165,11 +164,11 @@
                                                 <th data-field="nHoursPerWeek" data-sortable="true" data-align="right">Horas</th>
                                                 <th data-field="contractEndDate" data-sortable="true" data-align="right">Final Colocação</th>
                                                 <th data-field="applicationDeadline" data-sortable="true" data-align="right">Final de Candidatura</th>
-                                                <th data-field="recruitmentGroup" data-sortable="true" data-align="right">G.R.</th>
+                                                <th data-field="recruitmentGroup" data-sortable="true" data-align="right">Grupo</th>
                                                 <th data-field="county" data-visible="false">Concelho</th>
                                                 <th data-field="district" data-visible="false">Distrito</th>
                                                 <th data-field="classProject" data-visible="true" data-sortable="true">Disciplina / Projeto</th>
-                                                <th data-field="qualifications" data-visible="false">Curso/Habilitação</th>
+                                                <th data-field="qualifications" data-visible="false">Curso / Habilitação</th>
                                             </tr>
                                         </thead>
                                     </table>
@@ -180,89 +179,19 @@
                 </div>
             </div>
         </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-    <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.js"></script>
-    <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table-locale-all.min.js"></script>
-    <!-- <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/accent-neutralise/bootstrap-table-accent-neutralise.min.js"></script> -->
-    <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/addrbar/bootstrap-table-addrbar.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
-    <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/cookie/bootstrap-table-cookie.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/js/bootstrap-select.min.js" integrity="sha256-+o/X+QCcfTkES5MroTdNL5zrLNGb3i4dYdWPWuq6whY=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/js/i18n/defaults-pt_PT.min.js" integrity="sha256-d7ubmtbQ8aUlkZ6pX9oRFvHuYd2A5McecrZd7NCrenQ=" crossorigin="anonymous"></script>
-    <script>
-        var called = 0;
-
-        // Update on load to fill all the available height
-        $('#table').on('load-success.bs.table', function() {
-            var $div = $('.div-table');
-            var $table = $('#table');
-
-            // Avoid infinite loop
-            if (called != 0) {
-                return;
-            }
-            called = 1;
-
-            $table.bootstrapTable('refreshOptions', {
-                height: $div.height()
-            });
-        });
-
-        $(window).resize(function () {
-            $('#table').bootstrapTable('resetView');
-        });
-
-        // Load filter from cookie
-        $(function() {
-            var filter = JSON.parse(Cookies.get('saveId.bs.table.filterBy'));
-            var filterGroups = filter.recruitmentGroup;
-            $('#table-filter').selectpicker('val', filterGroups || []);
-        });
-
-        // Update filter
-        $('#table-filter').on('hidden.bs.select', function (e) {
-            var filterVal = $('#table-filter').val();
-
-            if (filterVal.length > 0) {
-                $('#table').bootstrapTable('filterBy', {
-                    "recruitmentGroup": filterVal
-                });
-            } else {
-                $('#table').bootstrapTable('filterBy', {});
-            }
-        });
-
-        function detailFormatter(index, row) {
-            var html = [];
-
-            html.push('<p>' + row.schoolName + ' - ' + row.schoolCode + '</p>');
-            html.push('<p><b>Horário nº:</b> ' + row.contractNumber + ' ');
-            html.push('<b>Horas:</b> ' + row.nHoursPerWeek + 'h</p>');
-            html.push('<p><b>Data Final de Colocação:</b> ' + row.contractEndDate);
-            if (row.contractEndDate != '2020-08-31') {
-                html.push(' (Temporário)</p>');
-            } else {
-                html.push(' (Anual)</p>');
-            }
-            html.push('<p><b>Data Final de Candidatura:</b> ' + row.applicationDeadline + '</p>');
-            if (row.recruitmentGroup == "T. E.") {
-                html.push('<p><b>Grupo de Recrutamento:</b> Técnico Especializado</p>');
-            } else {
-                html.push('<p><b>Grupo de Recrutamento:</b> ' + row.recruitmentGroup + '</p>');
-            }
-            html.push('<p><b>Concelho:</b> ' + row.county + ' ');
-            html.push('<b>Distrito:</b> ' + row.district + '</p>');
-            html.push('<p><b>Disciplina / Projeto:</b> ' + row.classProject + '</p>');
-            if (row.qualifications.length > 0) {
-                html.push('<p><b>Curso / Habilitação :</b> ' + row.qualifications + '</p>');
-            }
-
-            return html.join('');
-        }
-    </script>
+        <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.js"></script>
+        <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table-locale-all.min.js"></script>
+        <!-- <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/accent-neutralise/bootstrap-table-accent-neutralise.min.js"></script> -->
+        <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/addrbar/bootstrap-table-addrbar.min.js"></script>
+        <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/mobile/bootstrap-table-mobile.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+        <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/cookie/bootstrap-table-cookie.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/js/bootstrap-select.min.js" integrity="sha256-+o/X+QCcfTkES5MroTdNL5zrLNGb3i4dYdWPWuq6whY=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/js/i18n/defaults-pt_PT.min.js" integrity="sha256-d7ubmtbQ8aUlkZ6pX9oRFvHuYd2A5McecrZd7NCrenQ=" crossorigin="anonymous"></script>
+        <script src="js/home.js"></script>
     </body>
 </html>
