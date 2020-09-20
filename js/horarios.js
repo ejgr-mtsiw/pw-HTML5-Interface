@@ -47,7 +47,7 @@ function detailFormatter(index, row) {
     html.push('<p><b>Horário nº:</b> ' + row.contractNumber + ' ');
     html.push('<b>Horas:</b> ' + row.nHoursPerWeek + 'h</p>');
     html.push('<p><b>Data Final de Colocação:</b> ' + row.contractEndDate);
-    if (row.contractEndDate != '2020-08-31') {
+    if (row.contractEndDate != '2021-08-31') {
         html.push(' (Temporário)</p>');
     } else {
         html.push(' (Anual)</p>');
